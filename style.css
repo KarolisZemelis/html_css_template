@@ -8,9 +8,6 @@
 }
 body {
   background-color: black;
-  /* background-image: ;
-  background-position: center;
-  background-size:no-repeat ; */
 }
 .header {
   position: fixed;
@@ -21,7 +18,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 5%;
-  padding: 3rem 1.5rem 0 1.5rem;
+  padding: 3rem 1.5rem 1rem 1.5rem;
 }
 
 .header .logo {
@@ -51,6 +48,7 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 0px 11%;
+  margin-top: 30px;
 }
 
 .home .home-section {
@@ -120,7 +118,6 @@ body {
     background-color: black;
     height: 100vh;
     width: 100vw;
-    /* max-width: 450px; */
     position: fixed;
     top: 0;
     right: -1450px;
@@ -131,8 +128,7 @@ body {
     text-align: center;
     font-size: 3rem;
     transition: 0.3s ease;
-
-    z-index: 1;
+    z-index: 2;
   }
   a {
     color: white;
@@ -181,15 +177,22 @@ body {
     background-color: #00b59b;
   }
 
+  .home-section {
+    position: relative; /* Ensure it has a stacking context */
+    z-index: -1; /* Set a lower z-index for the section */
+  }
+
   .btn-box {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    position: relative; /* Ensure it has its own stacking context */
+    z-index: -2; /* Set a higher z-index for the buttons */
   }
   .home-section .btn-box a {
     width: 60%;
     margin-left: 0;
-    margin-top: 1rem;
+    margin-top: 2rem;
     transform: translateY(-30px);
+    min-width: 190px;
   }
 }
