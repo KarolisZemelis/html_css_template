@@ -19,6 +19,7 @@ body {
   align-items: center;
   height: 5%;
   padding: 3rem 1.5rem 1rem 1.5rem;
+  z-index: 10;
 }
 
 .header .logo {
@@ -48,7 +49,15 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 0px 11%;
-  margin-top: 30px;
+}
+
+.home-section {
+  position: relative; /* Maintain relative positioning */
+  z-index: 1;
+  background-image: url("cover.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .home .home-section {
@@ -113,6 +122,7 @@ body {
   }
   #mobile-menu {
     display: block;
+    position: relative;
   }
   .off-screen-menu {
     background-color: black;
@@ -128,7 +138,7 @@ body {
     text-align: center;
     font-size: 3rem;
     transition: 0.3s ease;
-    z-index: 2;
+    z-index: 999;
   }
   a {
     color: white;
@@ -160,7 +170,7 @@ body {
     transition: background-color 0.3s ease;
     border-radius: 5px;
     transition: all 0.3s ease;
-    z-index: 2;
+    z-index: 1000;
   }
 
   .ham-menu.active span:nth-child(1) {
@@ -178,15 +188,13 @@ body {
   }
 
   .home-section {
-    position: relative; /* Ensure it has a stacking context */
-    z-index: -1; /* Set a lower z-index for the section */
+    position: relative;
   }
 
   .btn-box {
     display: flex;
     flex-direction: column;
-    position: relative; /* Ensure it has its own stacking context */
-    z-index: -2; /* Set a higher z-index for the buttons */
+    position: relative;
   }
   .home-section .btn-box a {
     width: 60%;
